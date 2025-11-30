@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Task Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="left">
+        <h2>Enter Tasks (JSON Format)</h2>
+
+        <textarea 
+            id="taskInput" 
+            spellcheck="false"
+            placeholder='[
+    {
+        "title": "Finish Assignment",
+        "due_date": "2025-12-01",
+        "importance": 9,
+        "estimated_hours": 2,
+        "dependencies": []
+    },
+    {
+        "title": "Prepare Presentation",
+        "due_date": "2025-11-30",
+        "importance": 7,
+        "estimated_hours": 1,
+        "dependencies": [1]
+    }
+]'></textarea>
+
+        <button onclick="analyzeTasks()">Analyze Tasks</button>
+        <button onclick="suggestTasks()">Suggest Top 3</button>
+    </div>
+
+    <div class="right">
+        <h2>Results</h2>
+        <div id="results"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
